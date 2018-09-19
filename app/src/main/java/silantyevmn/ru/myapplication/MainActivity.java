@@ -58,16 +58,16 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
 
     @OnClick({R.id.btn_one, R.id.btn_two, R.id.btn_three})
     public void onClick(Button button) {
-        switch (button.getId()){
-            case R.id.btn_one:{
+        switch (button.getId()) {
+            case R.id.btn_one: {
                 presenter.counterClickButtonOne();
                 break;
             }
-            case R.id.btn_two:{
+            case R.id.btn_two: {
                 presenter.counterClickButtonTwo();
                 break;
             }
-            case R.id.btn_three:{
+            case R.id.btn_three: {
                 presenter.counterClickButtonThree();
                 break;
             }

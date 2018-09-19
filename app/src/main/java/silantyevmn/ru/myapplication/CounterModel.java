@@ -3,21 +3,27 @@ package silantyevmn.ru.myapplication;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CounterModel
-{
+import rx.Single;
+
+public class CounterModel {
     List<Integer> counters;
 
-    public CounterModel()
-    {
+    public CounterModel() {
         counters = new ArrayList<>();
         counters.add(0);
         counters.add(0);
         counters.add(0);
     }
 
-    public Integer calculate(int index)
-    {
+    public Integer calculate(int index) {
         counters.set(index, counters.get(index) + 1);
         return counters.get(index);
+    }
+
+    public Single<Integer> calculateSingle(final int index) {
+        return Single.fromCallable(() -> {
+            counters.set(index, counters.get(index) + 1);
+            return counters.get(index);
+        });
     }
 }

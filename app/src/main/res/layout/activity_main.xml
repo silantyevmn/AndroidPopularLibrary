@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/zero"/>
+        android:text="@string/zero" />
 
     <Button
         android:id="@+id/btn_two"
@@ -20,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_one"
         android:layout_centerHorizontal="true"
-        android:text="@string/zero"/>
+        android:text="@string/zero" />
 
     <Button
         android:id="@+id/btn_three"
@@ -28,12 +27,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_two"
         android:layout_centerHorizontal="true"
-        android:text="@string/zero"/>
+        android:text="@string/zero" />
+
     <EditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_three"
-        android:hint="какой то текст"/>
+        android:hint="какой то текст" />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text" />
 
 </RelativeLayout>

@@ -2,16 +2,21 @@ package silantyevmn.ru.myapplication;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
+import com.jakewharton.rxbinding.widget.RxTextView;
 
 import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Subscription;
+import rx.functions.Action1;
 
 public class MainActivity extends MvpAppCompatActivity implements MainView {
     @BindView(R.id.btn_one)
@@ -21,6 +26,11 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     @BindView(R.id.btn_three)
     Button buttonThree;
 
+    @BindView(R.id.text_view)
+    TextView textView;
+    @BindView(R.id.edit_text)
+    EditText editText;
+
     @InjectPresenter
     MainPresenter presenter;
 
@@ -29,6 +39,14 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        Subscription editTextSub = RxTextView.textChanges(editText).subscribe(new Action1<CharSequence>() {
+            @Override
+            public void call(CharSequence value) {
+                textView.setText(value);
+            }
+        });
+
     }
 
     @ProvidePresenter

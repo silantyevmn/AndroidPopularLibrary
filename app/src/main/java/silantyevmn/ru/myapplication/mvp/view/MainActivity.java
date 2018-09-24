@@ -1,6 +1,8 @@
 package silantyevmn.ru.myapplication.mvp.view;
 
+import android.Manifest;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -49,7 +51,12 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
                 textView.setText(value);
             }
         });
+        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 1);
+        requestPermission(Manifest.permission.READ_EXTERNAL_STORAGE, 2);
+    }
 
+    private void requestPermission(String permission, int requestCode) {
+        ActivityCompat.requestPermissions(this, new String[]{permission}, requestCode);
     }
 
     @ProvidePresenter

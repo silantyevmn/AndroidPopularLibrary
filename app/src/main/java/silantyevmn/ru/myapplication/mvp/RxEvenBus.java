@@ -1,11 +1,8 @@
-package silantyevmn.ru.myapplication;
+package silantyevmn.ru.myapplication.mvp;
 
 import rx.Observable;
 import rx.subjects.PublishSubject;
 
-/**
- * Created by silan on 24.09.2018.
- */
 
 public class RxEvenBus {
     private final PublishSubject subject;

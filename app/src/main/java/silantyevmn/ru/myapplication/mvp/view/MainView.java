@@ -11,4 +11,6 @@ public interface MainView extends MvpView {
     void setButtonTwoText(Integer calculate);
 
     void setButtonThreeText(Integer calculate);
+
+    void showImage(String url);
 }

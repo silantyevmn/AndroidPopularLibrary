@@ -43,4 +43,10 @@
         android:layout_below="@+id/edit_text"
         android:textSize="25sp" />
 
+    <Button
+        android:id="@+id/btn_convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view" />
+
 </RelativeLayout>

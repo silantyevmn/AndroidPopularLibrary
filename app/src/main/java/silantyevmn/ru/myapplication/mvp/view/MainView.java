@@ -1,4 +1,4 @@
-package silantyevmn.ru.myapplication;
+package silantyevmn.ru.myapplication.mvp.view;
 
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;

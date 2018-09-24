@@ -1,4 +1,4 @@
-package silantyevmn.ru.myapplication;
+package silantyevmn.ru.myapplication.mvp.presenter;
 
 import android.support.annotation.NonNull;
 
@@ -7,6 +7,8 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import rx.Scheduler;
 import rx.schedulers.Schedulers;
+import silantyevmn.ru.myapplication.mvp.model.CounterModel;
+import silantyevmn.ru.myapplication.mvp.view.MainView;
 
 
 @InjectViewState

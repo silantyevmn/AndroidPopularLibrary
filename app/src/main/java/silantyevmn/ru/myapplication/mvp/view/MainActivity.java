@@ -1,4 +1,4 @@
-package silantyevmn.ru.myapplication;
+package silantyevmn.ru.myapplication.mvp.view;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -18,6 +18,8 @@ import butterknife.OnClick;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import silantyevmn.ru.myapplication.R;
+import silantyevmn.ru.myapplication.mvp.presenter.MainPresenter;
 
 public class MainActivity extends MvpAppCompatActivity implements MainView {
     @BindView(R.id.btn_one)

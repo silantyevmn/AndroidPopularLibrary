@@ -1,4 +1,4 @@
-package silantyevmn.ru.myapplication;
+package silantyevmn.ru.myapplication.mvp.model;
 
 import java.util.ArrayList;
 import java.util.List;

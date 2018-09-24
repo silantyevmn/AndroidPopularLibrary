@@ -19,6 +19,9 @@ import rx.schedulers.Schedulers;
 
 public class CounterModel {
     List<Integer> counters;
+    private String loadNameFile="pogoda.jpg";
+    private String saveNameFile ="test";
+    private String saveNameFileSuffix=".png";
 
     public CounterModel() {
         counters = new ArrayList<>();
@@ -45,7 +48,7 @@ public class CounterModel {
     }
 
     public Observable<Uri> convertImage(Context context) {
-        return Observable.just(new String[]{"test", ".png"})
+        return Observable.just(new String[]{saveNameFile,saveNameFileSuffix })
                 .subscribeOn(Schedulers.io())
                 .map(s -> createFile(s[0], s[1]))
                 .map(file -> getUriConvertJpgToPng(file, context));
@@ -53,7 +56,7 @@ public class CounterModel {
 
     private Uri getUriConvertJpgToPng(File file, Context context) {
         try {
-            InputStream stream = context.getAssets().open("pogoda.jpg");
+            InputStream stream = context.getAssets().open(loadNameFile);
             Bitmap bitmap = BitmapFactory.decodeStream(stream);
             ByteArrayOutputStream bytes = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);

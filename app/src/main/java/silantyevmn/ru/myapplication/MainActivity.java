@@ -16,6 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
 public class MainActivity extends MvpAppCompatActivity implements MainView {
@@ -51,7 +52,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
 
     @ProvidePresenter
     public MainPresenter provideMainPresenter() {
-        presenter = new MainPresenter();
+        presenter = new MainPresenter(AndroidSchedulers.mainThread());
         //TO SOMETHING WITH PRESENTER
         return presenter;
     }

@@ -3,6 +3,7 @@ package silantyevmn.ru.myapplication;
 import java.util.ArrayList;
 import java.util.List;
 
+import rx.Observable;
 import rx.Single;
 
 public class CounterModel {
@@ -25,5 +26,10 @@ public class CounterModel {
             counters.set(index, counters.get(index) + 1);
             return counters.get(index);
         });
+    }
+
+    public Observable<Integer> calculateObservable(int index) {
+        counters.set(index, counters.get(index) + 1);
+        return Observable.just(counters.get(index));
     }
 }

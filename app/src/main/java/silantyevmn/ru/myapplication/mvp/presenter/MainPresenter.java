@@ -1,5 +1,6 @@
 package silantyevmn.ru.myapplication.mvp.presenter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.arellomobile.mvp.InjectViewState;
@@ -42,5 +43,11 @@ public class MainPresenter extends MvpPresenter<MainView> {
                 .subscribeOn(Schedulers.computation())
                 .observeOn(mainScheduler)
                 .subscribe(integer -> getViewState().setButtonThreeText(integer));
+    }
+
+    public void onClickConvert(Context context) {
+        model.convertImage(context)
+                .observeOn(mainScheduler)
+                .subscribe(uri -> getViewState().showImage(uri.toString()));
     }
 }
